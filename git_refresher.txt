@@ -1,0 +1,41 @@
+Docker Basics and Containerization Notes
+Introduction to Docker
+
+Docker is a tool that helps us run applications easily. It allows us to pack the application and everything it needs into one unit called a container. Because of this, the application runs the same way on every system.
+
+In simple words, Docker removes the problem of code working on one machine but not working on another.
+
+Docker Philosophy
+
+Docker follows a simple idea that if the application fits inside a container, then it can run anywhere. Once the code is packed into a Docker container, it does not matter whether it is run on a laptop, server, or cloud. The environment stays the same.
+
+What is a Container
+
+A container is a lightweight box that contains the application, required libraries, and settings. Containers are faster and smaller than virtual machines because they use the same operating system kernel of the host machine.
+
+Containers are isolated, so one container does not affect another.
+
+What is a Docker Image
+
+A Docker image is like a blueprint or template. It contains the application code and dependencies. Containers are created from images. Images themselves do not run, but containers created from them do.
+
+Docker Daemon and Docker Client
+
+The Docker daemon runs in the background and does the actual work of creating and running containers.
+The Docker client is what we use to give commands. When we type Docker commands, the client sends them to the daemon, and the daemon executes them.
+
+Volumes in Docker
+
+Volumes are used to store data permanently. Normally, container data is lost when a container stops, but volumes help save important data like files or databases outside the container.
+
+Docker Networking
+
+Docker provides networking so containers can talk to each other. This is useful when multiple containers like frontend and backend need to communicate.
+
+Running Docker Containers
+
+Containers are started using Docker commands. Containers can be run in interactive mode so that we can enter inside them and use the terminal. This is helpful for learning and testing.
+
+Docker Hub
+
+Docker Hub is an online repository where Docker images are stored. Developers can download ready made images or upload their own images. It is the default place Docker searches for images.
