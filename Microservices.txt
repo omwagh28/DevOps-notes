@@ -1,0 +1,148 @@
+Microservices Architecture –  Notes
+1. Microservices Architecture
+
+Microservices architecture is a software design style where an application is divided into small, independent services. Each service performs one specific business function and communicates with others using APIs. Services can be developed, deployed, and scaled independently.
+Example: Separate services for login, payments, and orders 
+
+
+
+.
+
+2. API Gateway
+
+An API Gateway is the single entry point for all client requests. It routes requests to the correct service and handles authentication, security, rate limiting, caching, and logging.
+Example: A mobile app sends all requests to the gateway, not directly to services 
+
+
+
+.
+
+3. Service Registry and Discovery
+
+A service registry keeps track of all running service instances. Service discovery allows services to find each other dynamically without hardcoding IP addresses.
+Example: When a payment service scales, new instances are automatically discovered 
+
+
+.
+
+4. DNS
+
+DNS converts domain names into IP addresses so clients can connect to services. In cloud systems, DNS also supports traffic routing and failover.
+Example: Converting myapp.com into an IP address 
+
+
+
+.
+
+5. Load Balancer
+
+A load balancer distributes incoming traffic across multiple service instances. This improves availability, fault tolerance, and scalability.
+Example: User requests are shared among multiple order service servers 
+
+
+
+.
+
+6. Database per Service
+
+Each microservice owns its own database. Services do not share databases, which keeps them loosely coupled and independent.
+Example: Order service and payment service use separate databases 
+
+
+
+.
+
+7. SQL Databases
+
+SQL databases use structured schemas and are best for transactional and relational data where consistency is important.
+Example: Storing user accounts and orders 
+
+
+
+.
+
+8. NoSQL Databases
+
+NoSQL databases use flexible schemas and are designed for high scalability and performance.
+Example: Storing logs, session data, or product catalogs 
+
+
+
+.
+
+9. Synchronous Communication
+
+In synchronous communication, a service sends a request and waits for a response. It is simple but can increase latency.
+Example: Login service waiting for authentication response 
+
+
+
+.
+
+10. Asynchronous Communication
+
+In asynchronous communication, a service sends a message and continues without waiting. This improves scalability and resilience.
+Example: Sending an order confirmation email using a message queue 
+
+
+
+.
+
+11. Message Broker
+
+A message broker manages message queues and enables asynchronous communication between services. It helps services stay loosely coupled.
+Example: Order service sends an event that the notification service processes later 
+
+
+
+.
+
+12. Event Bus
+
+An event bus allows services to publish events and other services to react to them. This supports event-driven architecture.
+Example: Inventory service updates stock after an order event 
+
+
+
+.
+
+13. Swagger / OpenAPI
+
+Swagger or OpenAPI is used to document APIs clearly. It helps developers understand and test APIs easily.
+Example: Viewing API endpoints and request formats in one place 
+
+
+
+.
+
+14. Externalized Logs and Configuration
+
+Logs and configuration are stored outside the service to avoid data loss when containers restart. This helps in debugging and monitoring.
+Example: Centralized logging for all microservices 
+
+
+
+.
+
+15. Monitoring and Tracing
+
+Monitoring tracks service health and performance, while tracing follows a request across multiple services.
+Example: Identifying which service caused a slow API response 
+
+
+
+.
+
+16. Reporting and Analytics
+
+Reporting systems collect data from multiple services to generate business insights without affecting core services.
+Example: Sales reports generated from order and payment data 
+
+
+
+.
+
+17. 12-Factor App
+
+The 12-Factor App is a set of best practices for building scalable, cloud-ready services. It focuses on stateless services, environment-based config, and proper logging.
+Example: Storing database credentials in environment variables
