@@ -1,0 +1,120 @@
+CI/CD & Docker – Short Notes
+1. CI/CD (Continuous Integration & Continuous Deployment)
+
+CI/CD is a software practice where code changes are automatically built, tested, and deployed. It reduces manual work and helps teams deliver features faster and more reliably.
+
+2. Continuous Integration (CI)
+
+Continuous Integration means frequently merging code into a shared repository and automatically verifying it.
+
+CI Flow
+
+When a developer pushes code, an automated pipeline starts.
+
+Linting
+Checks code style and syntax errors early.
+Example: Catching missing brackets or unused variables.
+
+Build
+Downloads dependencies and prepares the application.
+Example: Creating a Java .jar file.
+
+Unit Testing
+Tests individual functions or components.
+Mocking is used when a function depends on external services.
+Example: Testing login logic without calling a real database.
+
+Security Checks (SCA & SAST)
+Scans code and dependencies for known vulnerabilities.
+Example: Detecting insecure libraries.
+
+3. Artifacts
+
+Artifacts are build outputs generated during CI.
+They are stored and later used for deployment.
+
+Examples:
+
+JAR / WAR files
+
+Executables
+
+Docker images
+
+Artifacts ensure the same build is tested and deployed.
+
+4. Containers and Docker
+Dockerization
+
+Docker packages an application along with its dependencies into a container.
+
+A Docker image is a static build artifact.
+
+It is created using a base image and application layers.
+
+Layers are cached to speed up builds.
+
+Example:
+A Node.js app packaged with Node runtime and dependencies.
+
+5. Docker Image Repository
+
+Once built, Docker images are pushed to an artifact repository.
+
+This allows:
+
+Version control
+
+Reusability
+
+Consistent deployments across environments
+
+6. Continuous Deployment (CD)
+
+Continuous Deployment is the process of automatically deploying artifacts to environments after CI.
+
+Deployment may be:
+
+A continuation of CI
+
+Or a separate pipeline
+
+7. System Integration Testing (SIT)
+
+SIT is the first environment where the full application is deployed.
+
+Tests how different services work together
+
+Focuses on system behavior, not individual units
+
+Example:
+Checking if order service correctly communicates with payment service.
+
+8. Public IP vs Elastic IP
+
+Public IP
+Changes when a server is stopped or restarted.
+Suitable for temporary or testing environments.
+
+Elastic IP
+Remains fixed even after reboot or stop/start.
+Used in production for stable access.
+
+Example:
+A production website using a fixed IP address.
+
+9. Summary (Exam-Ready)
+
+CI automates build, test, and security checks
+
+CD automates deployment
+
+Docker ensures portable and consistent environments
+
+Artifacts guarantee same build moves across stages
+
+Elastic IPs provide stable endpoints in production
+
+One-Line Definition (Very Important)
+
+CI/CD is a practice that automates code integration, testing, and deployment to deliver software faster and more reliably.
