@@ -1,0 +1,173 @@
+Shell Scripting & Linux Basics – Notes
+1. Introduction to Shell Scripting
+
+Shell ek command-line interpreter hota hai (mostly bash)
+
+Shell Script = Linux commands ka collection jo automate kaam karta hai
+
+Use: automation, system admin, DevOps
+
+2. Creating & Executing a Shell Script
+Script banana
+touch hello.sh
+
+Shebang
+#!/bin/bash
+
+
+- Batata hai ki script bash se run hogi
+
+Execute permission
+chmod +x hello.sh
+
+Script run karna
+./hello.sh
+
+3. Variables & User Input
+Variable define
+NAME="Om"
+
+Variable access
+echo $NAME
+
+User input
+read -p "Enter name: " USERNAME
+
+
+ Space allowed nahi hota = ke around
+
+4. Conditional Statements (if)
+Syntax
+if [ condition ]; then
+    commands
+fi
+
+File exists check
+if [ -f file.txt ]; then
+    echo "File exists"
+fi
+
+Common conditions
+
+-f → file exists
+
+-d → directory exists
+
+-eq → equal
+
+-gt → greater than
+
+-lt → less than
+
+5. Loops
+for loop
+for i in 1 2 3
+do
+    echo $i
+done
+
+while loop
+count=1
+while [ $count -le 5 ]
+do
+    echo $count
+    ((count++))
+done
+
+6. File & Directory Management
+Directory
+mkdir mydir
+cd mydir
+
+File
+touch file.txt
+
+
+or
+
+cat > file.txt
+
+7. File Permissions
+Permission types
+
+r → read
+
+w → write
+
+x → execute
+
+Permission change
+chmod 755 script.sh
+
+
+Meaning:
+
+Owner → rwx
+
+Group → r-x
+
+Others → r-x
+
+View permissions
+ls -l
+
+8. Access Control List (ACL)
+
+Jab chmod enough nahi hota
+
+Specific user ko permission dene ke liye
+
+setfacl -m u:user:rwx file.txt
+
+9. Common Linux Commands
+Command	Work
+ls	list files
+pwd	current path
+cd	change directory
+cp	copy
+mv	move/rename
+rm	delete
+
+⚠ Dangerous:
+
+rm -rf folder
+
+10. String Manipulation
+Uppercase conversion
+echo $STR | tr [a-z] [A-Z]
+
+Tools
+
+tr → character replace
+
+sed → stream editor
+
+awk → text processing
+
+11. Find Command
+File search
+find /path -name filename
+
+
+Example:
+
+find . -name "*.txt"
+
+12. Functions
+Define
+my_func() {
+    echo "Hello"
+}
+
+Call
+my_func
+
+13. User & Group Management
+Add user
+useradd username
+
+Add group
+groupadd groupname
+
+
+Used in automation scripts.
